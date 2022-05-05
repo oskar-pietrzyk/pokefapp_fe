@@ -31,9 +31,6 @@ jobs:
       - run:
           name: Check test
           command: npm run test
-      - run:
-          name: Check cypress test
-          command: npx cypress run
 
 workflows:
   version: 2
