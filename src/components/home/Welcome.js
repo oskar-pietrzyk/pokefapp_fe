@@ -1,21 +1,28 @@
-import './Welcome.scss';
-import React from 'react';
+import { React, useEffect, useState } from 'react';
+import axios from '../../axios';
+import styles from './Welcome.module.scss';
 
 function Welcome() {
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    axios.get(`/welcome`)
+      .then(res => {
+        const data = res.data;
+        console.log(res, data);
+        setMessage(res.data.message)
+      })
+   }, []);
+
   return (
-    <div className="Welcome">
-      <header className="Welcome-header">
+    <div className={styles.Welcome}>
+      <header className={styles.WelcomeHeader}>
         <p>
-          Edit <code>src/Welcome.js</code> and save to reload.
+          Welcome from REACT
         </p>
-        <a
-          className="Welcome-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>
+          { message }
+        </p>
       </header>
     </div>
   );
