@@ -1,9 +1,16 @@
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: cimg/node:16.13.2
+
 version: 2.1
+
+orbs:
+  heroku: circleci/heroku@1.2.6
+
 jobs:
   build:
-    working_directory: ~/repo
-    docker:
-      - image: cimg/node:16.13.2
+    <<: *defaults
     steps:
       - checkout
       - run:
@@ -32,8 +39,21 @@ jobs:
           name: Check test
           command: npm run test
 
+  deploy_to_heroku:
+      <<: *defaults
+      steps:
+        - checkout
+        - heroku/deploy-via-git
+
 workflows:
   version: 2
   build-deploy:
     jobs:
       - build
+      - deploy_to_heroku:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master  
