@@ -1,0 +1,110 @@
+@import '../../../index.global.scss';
+
+.Header {
+  background-color: $base-white-color;
+  color: $base-grey-color;
+  display: flex;
+  justify-content: center;
+}
+
+.header_background {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../../assets/pokefapp_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation-duration: 1s;
+  animation-name: resize_bg;
+  position: absolute;
+}
+
+@keyframes resize_bg {
+  from {
+    background-image: url('../../../assets/pokefapp_bg_bigger.jpg');
+  }
+
+  to {
+    background-image: url('../../../assets/pokefapp_bg.jpg');
+  }
+}
+
+.header_pokemons {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-top: 40%;
+  animation-duration: 1s;
+  animation-name: slide_in;
+}
+
+.header_pokemons_bg {
+  width: 50vw;
+  height: 50vh;
+  background-image: url('../../../assets/pokefapp_trio.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+@keyframes slide_in { 
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-top: 40%;
+  }
+}
+
+.lets_play_button {
+  cursor: pointer;
+  width: 15rem;
+  height: 3rem;
+  margin-top: 55%;
+  background-color: $base-grey-color;
+  color: $base-yellow-color;
+  font-family: $font-family-exo-2;
+  font-size: 1.4rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4rem;
+  animation-duration: 1s;
+  animation-name: slide_in_button;
+
+  &:before {
+    content: url('../../../assets/pokefapp_lets_play_button_bottom.svg');
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    padding-top: 5rem;
+  }
+
+  &:after {
+    content: url('../../../assets/pokefapp_pokeball_yellow.svg');
+    width: 2rem;
+    height: 2rem;
+    padding-left: 0.4rem;
+
+  }
+
+  @media only screen and (max-width: $tablet-size) {
+    width: 12rem;
+    font-size: 1rem;
+  }
+}
+
+@keyframes slide_in_button { 
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-top: 55%;
+  }
+}
