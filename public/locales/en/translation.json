@@ -1,3 +1,9 @@
 {
-  "Welcome": "Welcome to pokefapp"
+  "Welcome": "Welcome to pokefapp",
+  "home_page": {
+    "lets_play_button": "Let's play"
+  },
+  "errors_handling": {
+    "not_found": "404 Page not found"
+  }
 }
