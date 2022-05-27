@@ -1,7 +1,11 @@
 {
   "Welcome": "Welcome to pokefapp",
   "home_page": {
-    "lets_play_button": "Let's play"
+    "lets_play_button": "Let's play",
+    "catchem_all": {
+      "label": "Catch'em all",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis aliquet nunc, sit amet pharetra lectus faucibus mattis. Phasellus molestie pellentesque ultricies. Suspendisse potenti. Vestibulum scelerisque ullamcorper quam at finibus. Sed mattis magna a nisi accumsan faucibus. Donec facilisis, enim eu facilisis hendrerit, ipsum odio dignissim neque, ac pulvinar quam tortor vitae velit. Etiam ac nisl cursus, hendrerit magna at, accumsan ligula. Pellentesque ut urna ac nisl sodales aliquam."
+    }
   },
   "errors_handling": {
     "not_found": "404 Page not found"

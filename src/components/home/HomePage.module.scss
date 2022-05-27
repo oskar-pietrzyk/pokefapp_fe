@@ -4,3 +4,29 @@
   background-color: $base-white-color;
   color: $base-grey-color;
 }
+
+.home_page_hr {
+  border-left: 0.2rem solid $base-grey-color;
+  height: 300rem;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-top: 55%;
+  animation-duration: 1s;
+  animation-name: slide_in;
+
+  @media only screen and (max-width: $tablet-size) {
+    display: none;
+  }
+}
+
+
+@keyframes slide_in { 
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-top: 55%;
+  }
+}

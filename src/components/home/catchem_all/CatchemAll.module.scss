@@ -1,0 +1,166 @@
+@import '../../../index.global.scss';
+
+.CatchemAll {
+  width: 100vw;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media only screen and (max-width: $tablet-size) {
+   flex-direction: column;
+   justify-content: center;
+  }
+}
+
+.catchem_all_mewtwo_placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  margin-right: 10rem;
+  margin-top: 4rem;
+
+  @media only screen and (max-width: $desktop-small-size) {
+    margin-right: 5rem;
+  }
+
+  @media only screen and (max-width: $tablet-size) {
+    display: none;
+  }
+}
+
+.catchem_all_mewtwo_bg {
+  width: 20rem;
+  height: 20rem;
+  background-image: url('../../../assets/mew_two.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.catchem_all_section {
+  width: 40%;
+  margin-top: 16rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 4.8rem;
+  
+  @media only screen and (max-width: $desktop-small-size) {
+    margin-left: 2.4rem;
+  }
+
+  @media only screen and (max-width: $tablet-size) {
+    margin-top: 4.8rem;
+    width: 80%;
+  }
+}
+
+.catchem_all_label {
+  display: flex;
+  font-family: $font-family-exo-2;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.catchem_all_description {
+  padding-top: 2.4rem;
+  display: flex;
+  font-family: $font-family-pt-sans;
+  font-size: 1rem;
+  margin-bottom: 4rem;
+
+  @media only screen and (max-width: $desktop-small-size) {
+    font-size: 0.8rem;
+  }
+
+  @media only screen and (max-width: $tablet-size) {
+    margin-bottom: 12rem;
+  }
+}
+
+.catchem_all_pokemons_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catchem_all_pokemons_bg {
+  width: 54vw;
+  content: url('../../../assets/catchem_all_bg.svg');
+  margin-left: -4.8rem;
+
+
+  @media only screen and (max-width: $desktop-normal-size) {
+    width: 52vw;
+  }
+
+  @media only screen and (max-width: $tablet-size) {
+    display: none;
+  }
+}
+
+.catchem_all_pokemons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 20vw;
+}
+
+.catchem_all_pokemons_starters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.2rem solid $base-grey-color;
+  width: 7rem;
+  background-color: rgba(255, 255, 255, 0.4);
+
+  @media only screen and (max-width: $desktop-normal-size) {
+    width: 30vw;
+    margin: 0 2rem;
+  }
+
+  @media only screen and (max-width: $desktop-small-size) {
+    width: 20vw;
+    margin: 0 1rem;
+  }
+
+  @media only screen and (max-width: $tablet-size) {
+    background-color: $base-yellow-color;
+  }
+}
+
+.catchem_all_pokemons_starter_1 {
+  content: url('../../../assets/catchem_all_poke_1.png');
+}
+
+.catchem_all_pokemons_starter_2 {
+  content: url('../../../assets/catchem_all_poke_2.png');
+}
+.catchem_all_pokemons_starter_3 {
+  content: url('../../../assets/catchem_all_poke_3.png');
+}
+
+.catchem_all_pokemons_starter_4 {
+  content: url('../../../assets/catchem_all_poke_4.png');
+}
+
+.catchem_all_pokemons_starter_5 {
+  content: url('../../../assets/catchem_all_poke_5.png');
+}
+
+.catchem_all_pokemons_starter_6 {
+  content: url('../../../assets/catchem_all_poke_6.png');
+}
+
+.catchem_all_pokemons_starter_7 {
+  content: url('../../../assets/catchem_all_poke_7.png');
+}
+
+.catchem_all_pokemons_starter_8 {
+  content: url('../../../assets/catchem_all_poke_8.png');
+}
+.catchem_all_pokemons_starter_9 {
+  content: url('../../../assets/catchem_all_poke_9.png');
+}
