@@ -1,0 +1,60 @@
+@import '../../../index.global.scss';
+
+.main {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -15rem;
+  
+  @media only screen and (max-width: $tablet-size) {
+    margin-top: 12rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.earn_pokecoins_section {
+  width: 49vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media only screen and (max-width: $tablet-size) {
+    width: 100vw;
+  }
+}
+
+.earn_pokecoins_section_background {
+  width: 100%;
+  content: url('../../../assets/earn_pokecoins_bg.svg');
+}
+
+.earn_pokecoins_section_text {
+  display: flex;
+  flex-direction: column;
+}
+
+.earn_pokecoins_section_label {
+  display: flex;
+  font-family: $font-family-exo-2;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  justify-content: flex-end;
+  margin-right: 2rem;
+
+  @media only screen and (max-width: $phone-size) {
+    font-size: 1.6rem;
+  }
+}
+
+.earn_pokecoins_section_description {
+  display: flex;
+  font-family: $font-family-pt-sans;
+  font-size: 1rem;
+  margin: 2.4rem 3rem;
+
+  @media only screen and (max-width: $desktop-small-size) {
+    font-size: 0.8rem;
+    margin-left: 6rem;
+  }
+}

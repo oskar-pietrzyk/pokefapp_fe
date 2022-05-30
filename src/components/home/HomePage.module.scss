@@ -1,11 +1,11 @@
 @import '../../index.global.scss';
 
-.HomePage {
+.main {
   background-color: $base-white-color;
   color: $base-grey-color;
 }
 
-.home_page_hr {
+.vertical_cable {
   border-left: 0.2rem solid $base-grey-color;
   height: 300rem;
   position: absolute;
@@ -19,7 +19,6 @@
     display: none;
   }
 }
-
 
 @keyframes slide_in { 
   from {
