@@ -5,6 +5,10 @@
     "catchem_all": {
       "label": "Catch'em all",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis aliquet nunc, sit amet pharetra lectus faucibus mattis. Phasellus molestie pellentesque ultricies. Suspendisse potenti. Vestibulum scelerisque ullamcorper quam at finibus. Sed mattis magna a nisi accumsan faucibus. Donec facilisis, enim eu facilisis hendrerit, ipsum odio dignissim neque, ac pulvinar quam tortor vitae velit. Etiam ac nisl cursus, hendrerit magna at, accumsan ligula. Pellentesque ut urna ac nisl sodales aliquam."
+    },
+    "earn_pokecoins": {
+      "label": "Earn pokecoins",
+      "description": "Vivamus venenatis nibh sit amet enim consectetur elementum. Donec mollis sem eu odio sagittis ultricies. Nunc malesuada, nunc sed congue sodales, nisi tortor posuere tellus, et tristique turpis metus vitae metus. Praesent iaculis congue erat. Duis ut sem eget ex semper dapibus. Ut convallis sit amet lorem ac suscipit. Vestibulum maximus vehicula nulla, finibus vestibulum leo fringilla eget. Pellentesque eu massa eget lorem luctus sodales et gravida dui. Ut vel odio sed diam vestibulum malesuada. Duis varius eros ut enim imperdiet tincidunt. In ut molestie enim, non aliquet ipsum."
     }
   },
   "errors_handling": {

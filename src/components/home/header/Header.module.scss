@@ -1,11 +1,11 @@
 @import '../../../index.global.scss';
 
-.Header {
+.main {
   display: flex;
   justify-content: center;
 }
 
-.header_background {
+.main_background {
   width: 100vw;
   height: 100vh;
   background-image: url('../../../assets/pokefapp_bg.jpg');
@@ -16,7 +16,7 @@
   position: absolute;
 }
 
-.header_pokemons {
+.main_pokemons {
   width: 100vw;
   height: auto;
   display: flex;
@@ -28,7 +28,7 @@
   animation-name: slide_in;
 }
 
-.header_pokemons_bg {
+.main_pokemons_background {
   width: 50vw;
   height: 50vh;
   background-image: url('../../../assets/pokefapp_trio.png');

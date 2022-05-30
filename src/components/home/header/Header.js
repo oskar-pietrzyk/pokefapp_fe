@@ -6,10 +6,10 @@ function Header() {
   const { t } = useTranslation();
 
   return (
-    <div className={styles.Header}>
-      <div className={styles.header_background} />
-      <div className={styles.header_pokemons} >
-        <div className={styles.header_pokemons_bg} />
+    <div className={styles.main}>
+      <div className={styles.main_background} />
+      <div className={styles.main_pokemons} >
+        <div className={styles.main_pokemons_background} />
       </div>
       <div className={styles.lets_play_button}> 
         {t('home_page.lets_play_button')}
