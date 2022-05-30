@@ -1,8 +1,6 @@
 @import '../../../index.global.scss';
 
 .Header {
-  background-color: $base-white-color;
-  color: $base-grey-color;
   display: flex;
   justify-content: center;
 }
@@ -16,16 +14,6 @@
   animation-duration: 1s;
   animation-name: resize_bg;
   position: absolute;
-}
-
-@keyframes resize_bg {
-  from {
-    background-image: url('../../../assets/pokefapp_bg_bigger.jpg');
-  }
-
-  to {
-    background-image: url('../../../assets/pokefapp_bg.jpg');
-  }
 }
 
 .header_pokemons {
@@ -50,16 +38,6 @@
   position: absolute;
 }
 
-@keyframes slide_in { 
-  from {
-    margin-top: 100%;
-  }
-
-  to {
-    margin-top: 40%;
-  }
-}
-
 .lets_play_button {
   cursor: pointer;
   width: 15rem;
@@ -68,7 +46,7 @@
   background-color: $base-grey-color;
   color: $base-yellow-color;
   font-family: $font-family-exo-2;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -76,6 +54,8 @@
   border-radius: 0.4rem;
   animation-duration: 1s;
   animation-name: slide_in_button;
+  text-transform: uppercase;
+
 
   &:before {
     content: url('../../../assets/pokefapp_lets_play_button_bottom.svg');
@@ -83,6 +63,10 @@
     height: 2rem;
     position: absolute;
     padding-top: 5rem;
+
+    @media only screen and (max-width: $tablet-size) {
+      display: none;
+    }  
   }
 
   &:after {
@@ -90,12 +74,31 @@
     width: 2rem;
     height: 2rem;
     padding-left: 0.4rem;
-
   }
 
   @media only screen and (max-width: $tablet-size) {
     width: 12rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes resize_bg {
+  from {
+    background-image: url('../../../assets/pokefapp_bg_bigger.jpg');
+  }
+
+  to {
+    background-image: url('../../../assets/pokefapp_bg.jpg');
+  }
+}
+
+@keyframes slide_in { 
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-top: 40%;
   }
 }
 
