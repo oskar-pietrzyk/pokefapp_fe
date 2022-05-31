@@ -1,0 +1,41 @@
+@import '../../../index.global.scss';
+
+.main {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 16rem;
+
+  @media only screen and (max-width: $tablet-size) {
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+}
+
+.gameboy {
+  content: url('../../../assets/gameboy.svg');
+  position: absolute;
+  left: 27.5%;
+  width: 45vw;
+
+  @media only screen and (max-width: $tablet-size) {
+    position: static;
+  }
+}
+
+.vertical_cable {
+  display: none;
+
+  @media only screen and (max-width: $tablet-size) {
+    display: flex;
+    border-left: 0.2rem solid $base-grey-color;
+    height: 10rem;
+    left: 50%;
+    bottom: 0;
+  }
+
+  @media only screen and (max-width: $phone-size) {
+    height: 4rem;
+  }
+}
