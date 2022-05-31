@@ -1,0 +1,96 @@
+@import '../../../index.global.scss';
+
+.main {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12rem;
+
+  @media only screen and (max-width: $tablet-size) {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+}
+
+.label_left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family-exo-2;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  margin-left: 2rem;
+   
+  @media only screen and (max-width: $desktop-small-size) {
+    margin-left: 6rem;
+  }
+
+  @media only screen and (max-width: $tablet-size) {
+    margin: 0;
+  }
+}
+
+.label_left_background {
+  background: linear-gradient(90deg, rgba(151,198,166,1) 25%, rgba(206,107,94,1) 50%, rgba(137,178,204,1) 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pokemon {
+  background-image: url('../../../assets/become_master.png');
+  width: 30vw;
+  height: 20vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: $base-white-color;
+  position: absolute;
+  left: 35%;
+  margin-bottom: 1rem;
+
+  @media only screen and (max-width: $tablet-size) {
+    width: 25vw;
+    height: 20vw;
+    position: static;
+  }
+}
+
+.label_right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family-exo-2;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  margin-right: 2rem;
+ 
+  @media only screen and (max-width: $desktop-small-size) {
+    margin-right: 6rem;
+  }
+
+  @media only screen and (max-width: $tablet-size) {
+    margin: 0;
+  }
+}
+
+.label_right_background {
+  background: linear-gradient(90deg, rgba(137,178,204,1) 25%, rgba(206,107,94,1) 50%, rgba(151,198,166,1) 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.horizontal_hr {
+  width: 3rem;
+  border-top: 0.2rem solid $base-grey-color;
+  margin: 0 3rem;
+
+  @media only screen and (max-width: $desktop-small-size) {
+    display: none;
+  }
+
+  @media only screen and (max-width: $tablet-size) {
+    display: flex;
+  }
+}
