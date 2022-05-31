@@ -3,6 +3,7 @@ import Header from './header/Header';
 import CatchemAll from './catchem_all/CatchemAll';
 import EarnPokecoins from './earn_pokecoins/EarnPokecoins';
 import BecomeMaster from './become_master/BecomeMaster';
+import Gameboy from './gameboy/Gameboy';
 import styles from './HomePage.module.scss';
 
 function HomePage() {
@@ -13,6 +14,7 @@ function HomePage() {
       <CatchemAll />
       <EarnPokecoins />
       <BecomeMaster />
+      <Gameboy />
     </div>
   );
 }
