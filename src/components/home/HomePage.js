@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header/Header';
 import CatchemAll from './catchem_all/CatchemAll';
 import EarnPokecoins from './earn_pokecoins/EarnPokecoins';
+import BecomeMaster from './become_master/BecomeMaster';
 import styles from './HomePage.module.scss';
 
 function HomePage() {
@@ -11,6 +12,7 @@ function HomePage() {
       <Header />
       <CatchemAll />
       <EarnPokecoins />
+      <BecomeMaster />
     </div>
   );
 }
