@@ -17,6 +17,10 @@
     "pokemon_master_ranking": {
       "label": "pokemon master ranking",
       "bio_placeholder": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere pharetra odio, quis pellentesque augue congue eget."
+    },
+    "footer": {
+      "label": "footer",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere pharetra odio, quis pellentesque augue congue eget. Curabitur nec dignissim massa. Integer sodales nunc a eros pellentesque, sed mollis metus rutrum. Phasellus non cursus nulla. Quisque vel ante risus. In consequat massa vitae diam ornare laoreet. "
     }
   },
   "errors_handling": {

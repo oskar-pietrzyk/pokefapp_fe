@@ -3,6 +3,8 @@
 .main {
   background-color: $base-white-color;
   color: $base-grey-color;
+  display: flex;
+  flex-direction: column;
 }
 
 .vertical_cable {
