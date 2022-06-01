@@ -13,6 +13,10 @@
     "become_master": {
       "label_left": "become",
       "label_right": "master"
+    },
+    "pokemon_master_ranking": {
+      "label": "pokemon master ranking",
+      "bio_placeholder": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere pharetra odio, quis pellentesque augue congue eget."
     }
   },
   "errors_handling": {
