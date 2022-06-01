@@ -5,6 +5,7 @@ import EarnPokecoins from './earn_pokecoins/EarnPokecoins';
 import BecomeMaster from './become_master/BecomeMaster';
 import Gameboy from './gameboy/Gameboy';
 import PokemonMasterRanking from './pokemon_master_ranking/PokemonMasterRanking';
+import Footer from './footer/Footer';
 import styles from './HomePage.module.scss';
 
 function HomePage() {
@@ -17,6 +18,7 @@ function HomePage() {
       <BecomeMaster />
       <Gameboy />
       <PokemonMasterRanking />
+      <Footer />
     </div>
   );
 }

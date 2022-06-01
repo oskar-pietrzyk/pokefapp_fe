@@ -1,0 +1,47 @@
+@import '../../../index.global.scss';
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url('../../../assets/pokefapp_footer_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 40rem;
+}
+
+.text {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  color: $base-white-color;
+  padding: 4.8rem;
+
+  @media only screen and (max-width: $tablet-size) {
+    width: 60vw;
+  }
+}
+
+.label {
+  display: flex;
+  font-family: $font-family-exo-2;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.description {
+  padding-top: 2.4rem;
+  display: flex;
+  font-family: $font-family-pt-sans;
+  font-size: 1rem;
+  margin-bottom: 4rem;
+
+  @media only screen and (max-width: $desktop-small-size) {
+    font-size: 0.8rem;
+  }
+
+  @media only screen and (max-width: $tablet-size) {
+    margin-bottom: 12rem;
+  }
+}
