@@ -11,9 +11,9 @@ function Header() {
       <div className={styles.main_pokemons} >
         <div className={styles.main_pokemons_background} />
       </div>
-      <div className={styles.lets_play_button}> 
+      <button className={styles.lets_play_button}> 
         {t('home_page.lets_play_button')}
-      </div>
+      </button>
     </div>
     
   );

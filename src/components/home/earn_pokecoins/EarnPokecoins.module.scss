@@ -12,7 +12,7 @@
   }
 }
 
-.earn_pokecoins_section {
+.section {
   width: 49vw;
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@
   }
 }
 
-.earn_pokecoins_section_background {
+.section_background {
   width: 100%;
   content: url('../../../assets/earn_pokecoins_bg.svg');
 }
@@ -34,7 +34,7 @@
   flex-direction: column;
 }
 
-.earn_pokecoins_section_label {
+.section_label {
   display: flex;
   font-family: $font-family-exo-2;
   font-size: 2.4rem;
@@ -47,7 +47,7 @@
   }
 }
 
-.earn_pokecoins_section_description {
+.section_description {
   display: flex;
   font-family: $font-family-pt-sans;
   font-size: 1rem;

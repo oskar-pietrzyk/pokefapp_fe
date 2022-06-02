@@ -7,13 +7,13 @@ function EarnPokecoins() {
 
   return (
     <div className={styles.main}>
-      <div className={styles.earn_pokecoins_section}>
-        <div className={styles.earn_pokecoins_section_background} />
-        <div className={styles.earn_pokecoins_section_text}>
-          <div className={styles.earn_pokecoins_section_label} >
+      <div className={styles.section}>
+        <div className={styles.section_background} />
+        <div className={styles.section_text}>
+          <div className={styles.section_label} >
             {t('home_page.earn_pokecoins.label')}
           </div>
-          <div className={styles.earn_pokecoins_section_description} >
+          <div className={styles.section_description} >
             {t('home_page.earn_pokecoins.description')}
           </div>
         </div>

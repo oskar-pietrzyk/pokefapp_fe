@@ -2,11 +2,17 @@ defaults: &defaults
   working_directory: ~/repo
   docker:
     - image: cimg/node:16.13.2
-
 version: 2.1
 
 orbs:
   heroku: circleci/heroku@1.2.6
+  cypress: cypress-io/cypress@2.0.0
+
+executors:
+  with-chrome:
+    resource_class: small
+    docker:
+      - image: "cypress/browsers:node14.16.0-chrome90-ff88"
 
 jobs:
   build:
@@ -50,6 +56,17 @@ workflows:
   build-deploy:
     jobs:
       - build
+      - cypress/install:
+          requires:
+            - build
+      - cypress/run:
+          requires:
+            - build
+            - cypress/install
+          executor: with-chrome
+          browser: chrome
+          parallel: true # split all specs across machines
+          parallelism: 4 # use 4 CircleCI machines to finish quickly
       - deploy_to_heroku:
           requires:
             - build

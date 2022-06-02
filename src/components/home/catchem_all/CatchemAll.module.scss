@@ -38,7 +38,7 @@
   background-size: contain;
 }
 
-.catchem_all_section {
+.section {
   width: 40%;
   margin-top: 16rem;
   display: flex;
@@ -55,14 +55,14 @@
   }
 }
 
-.catchem_all_section_label {
+.section_label {
   display: flex;
   font-family: $font-family-exo-2;
   font-size: 2.4rem;
   text-transform: uppercase;
 }
 
-.catchem_all_section_description {
+.section_description {
   padding-top: 2.4rem;
   display: flex;
   font-family: $font-family-pt-sans;
@@ -78,13 +78,13 @@
   }
 }
 
-.catchem_all_section_pokemons {
+.section_pokemons {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.catchem_all_section_pokemons_background {
+.section_pokemons_background {
   width: 54vw;
   content: url('../../../assets/catchem_all_bg.svg');
   margin-left: -4.8rem;
@@ -99,7 +99,7 @@
   }
 }
 
-.catchem_all_section_pokemons_container {
+.section_pokemons_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,7 +107,7 @@
   width: 20vw;
 }
 
-.catchem_all_section_pokemons_starters {
+.section_pokemons_starters {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -136,36 +136,36 @@
   }
 }
 
-.catchem_all_pokemons_section_starter_1 {
+.pokemons_section_starter_1 {
   content: url('../../../assets/catchem_all_poke_1.png');
 }
 
-.catchem_all_pokemons_section_starter_2 {
+.pokemons_section_starter_2 {
   content: url('../../../assets/catchem_all_poke_2.png');
 }
-.catchem_all_pokemons_section_starter_3 {
+.pokemons_section_starter_3 {
   content: url('../../../assets/catchem_all_poke_3.png');
 }
 
-.catchem_all_pokemons_section_starter_4 {
+.pokemons_section_starter_4 {
   content: url('../../../assets/catchem_all_poke_4.png');
 }
 
-.catchem_all_pokemons_section_starter_5 {
+.pokemons_section_starter_5 {
   content: url('../../../assets/catchem_all_poke_5.png');
 }
 
-.catchem_all_pokemons_section_starter_6 {
+.pokemons_section_starter_6 {
   content: url('../../../assets/catchem_all_poke_6.png');
 }
 
-.catchem_all_pokemons_section_starter_7 {
+.pokemons_section_starter_7 {
   content: url('../../../assets/catchem_all_poke_7.png');
 }
 
-.catchem_all_pokemons_section_starter_8 {
+.pokemons_section_starter_8 {
   content: url('../../../assets/catchem_all_poke_8.png');
 }
-.catchem_all_pokemons_section_starter_9 {
+.pokemons_section_starter_9 {
   content: url('../../../assets/catchem_all_poke_9.png');
 }
