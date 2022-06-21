@@ -1,0 +1,109 @@
+@import '../../../index.global.scss';
+
+.main {
+  background-color: $base-white-color;
+  color: $base-grey-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main_background {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../../../assets/auth_background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+
+.form_section {
+  width: 40vw;
+  height: 60vh;
+  position: absolute;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+
+  @media only screen and (max-width: $tablet-size) {
+    width: 60vw;
+  }
+
+  @media only screen and (max-width: $phone-size) {
+    width: 80vw;
+  }
+}
+
+.form_section_background {
+  width: 40vw;
+  height: 60vh;
+  top: 20%;
+  position: absolute;
+  background-color: $base-yellow-color;
+  opacity: 0.1;
+  border-radius: 0.4rem;
+  
+  @media only screen and (max-width: $tablet-size) {
+    width: 60vw;
+  }
+
+  @media only screen and (max-width: $phone-size) {
+    width: 80vw;
+  }
+}
+
+.form_section_submit_button {
+  width: 10vw;
+  height: 3rem;
+  background-color: $base-grey-color;
+  color: $base-yellow-color;
+  font-family: $font-family-exo-2;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 2.4rem;
+  margin-right: 5rem;
+
+
+  @media only screen and (max-width: $desktop-small-size) {
+    font-size: 1rem;
+    width: 12vw;
+  }
+
+  @media only screen and (max-width: $tablet-size) {
+    align-self: center;
+    margin-right: 0;
+    width: 20vw;
+  }
+
+  @media only screen and (max-width: $phone-size) {
+    font-size: 0.8rem;
+    width: 30vw;
+  }
+}
+
+input {
+  width: 25vw;
+  height: 2.4rem;
+  margin: 1rem 0;
+  padding: 0 1rem;
+  background-color: $base-yellow-color;
+  border-bottom: 0.3rem solid $base-grey-color;
+  font-family: $font-family-pt-sans;
+  border-radius: 0.2rem;
+
+  @media only screen and (max-width: $tablet-size) {
+    width: 40vw;
+  }
+
+  @media only screen and (max-width: $phone-size) {
+    width: 60vw;
+  }
+}
