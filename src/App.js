@@ -1,26 +1,24 @@
-import { React, useState } from 'react';
+import React from 'react';
 import HomePage from './components/home/HomePage';
 import Login from './components/auth/login/Login';
 import Register from './components/auth/register/Register';
 import NotFound from './components/errors_handling/NotFound';
 import './index.global.scss';
 import { Routes, Route } from "react-router-dom";
-import { CurrentUserContext } from './contexts/CurrentUserContext'
+import { CurrentUserContextProvider } from './contexts/CurrentUserContext'
+import { RequireUser } from './guards/RequireUser';
+import { AuthorizedUser } from './guards/AuthorizedUser';
 
 function App() {
-  const [loggedIn, setLoggedIn, currentUser, setCurrentUser] = useState({loggedIn: true});
-  const value = { loggedIn, setLoggedIn, currentUser, setCurrentUser }
   return (
-    <CurrentUserContext.Provider value={value}>
+    <CurrentUserContextProvider>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        { loggedIn === false (
-          <Route path="/login" element={<Login />} />
-        )}
-        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<RequireUser path='/'><HomePage /></RequireUser>} />
+        <Route path="/login" element={<AuthorizedUser><Login /></AuthorizedUser>} />
+        <Route path="/register" element={<AuthorizedUser><Register /></AuthorizedUser>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </CurrentUserContext.Provider>
+    </CurrentUserContextProvider>
   );
 }
 

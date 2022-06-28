@@ -1,8 +1,8 @@
-import { React, useState } from 'react';
+import { React, useState, useContext, useEffect } from 'react';
 import styles from './Register.module.scss';
 import axios from 'axios';
 import InputError from '../../errors_handling/InputError';
-import { Navigate } from "react-router-dom";
+import { CurrentUserContext } from '../../../contexts/CurrentUserContext';
 
 function Register() {
   const [userInfo, setUserInfo] = useState({
@@ -12,7 +12,16 @@ function Register() {
     password_confirmation: ""
   });
 
-  const [loggedIn, setLoggedIn] = useState({})
+  const [loggedIn, setLoggedIn] = useContext(CurrentUserContext)
+  useEffect(() => {
+    if (window.localStorage.getItem('loggedIn') === 'true') {
+      setLoggedIn({type: 'logged_in'})
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('loggedIn', loggedIn.loggedIn);
+  }, [loggedIn.loggedIn]);
 
   const [errorMessages, setErrorMessages] = useState({})
 
@@ -24,7 +33,7 @@ function Register() {
     e.preventDefault()
     axios.post(`http://localhost:3000/api/v1/users`, userInfo, {  headers: { 'content-type': 'application/vnd.api+json' },  })
       .then(res => {
-        setLoggedIn(true)
+        setLoggedIn({type: 'logged_in'})
       })
       .catch((error) => {
         setErrorMessages(error.response.data)
@@ -33,7 +42,6 @@ function Register() {
 
   return (
     <div className={styles.main}>
-      { loggedIn === true && (<Navigate to='/'/>) }
       <div className={styles.main_background} />
       <div className={styles.form_section_background} />
       <form className={styles.form_section} >
