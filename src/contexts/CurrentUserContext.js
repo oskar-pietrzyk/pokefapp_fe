@@ -5,14 +5,19 @@ import propTypes from 'prop-types';
 
 const CurrentUserContext = createContext({
   state: initialState,
-  login: () => Boolean
+  login: () => Boolean,
 });
 
 const CurrentUserContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const login = useCallback(async (userInfo) => {
-    const res = await axios.post(`http://localhost:3000/api/v1/login`, userInfo, {  headers: { 'content-type': 'application/vnd.api+json' },  })
-    dispatch({type: 'logged_in', user: res.data})
+  const login = useCallback(async (data) => {
+    await axios.post(`http://localhost:3000/api/v1/login`, data, {  headers: { 'content-type': 'application/vnd.api+json' },  })
+    dispatch({type: 'logged_in'})
+  }, []);
+
+  const signUp = useCallback(async(data) => {
+    await axios.post(`http://localhost:3000/api/v1/users`, data, {  headers: { 'content-type': 'application/vnd.api+json' },  })
+    dispatch({type: 'logged_in'})
   }, []);
 
   useEffect(() => {
@@ -26,7 +31,7 @@ const CurrentUserContextProvider = ({ children }) => {
   }, [state.isLoggedIn]);
 
   return( 
-    <CurrentUserContext.Provider value={{state, login}}>
+    <CurrentUserContext.Provider value={{state, login, signUp}}>
       {children}
     </CurrentUserContext.Provider>
   )

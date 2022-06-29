@@ -1,87 +1,51 @@
-import { React, useState, useContext, useEffect } from 'react';
+import { React, useState } from 'react';
 import styles from './Register.module.scss';
-import axios from 'axios';
-import InputError from '../../errors_handling/InputError';
-import { CurrentUserContext } from '../../../contexts/CurrentUserContext';
+import { useCurrentUser } from '../../../contexts/CurrentUserContext';
+import { useForm } from "react-hook-form";
 
 function Register() {
-  const [userInfo, setUserInfo] = useState({
-    username: "",
-    email: "",
-    password: "",
-    password_confirmation: ""
-  });
+  const { register, formState: { errors }, getValues, handleSubmit } = useForm();
 
-  const [loggedIn, setLoggedIn] = useContext(CurrentUserContext)
-  useEffect(() => {
-    if (window.localStorage.getItem('loggedIn') === 'true') {
-      setLoggedIn({type: 'logged_in'})
-    }
-  }, []);
+  const { signUp } = useCurrentUser();
 
-  useEffect(() => {
-    window.localStorage.setItem('loggedIn', loggedIn.loggedIn);
-  }, [loggedIn.loggedIn]);
+  const [errorMessage, setErrorMessage] = useState({})
 
-  const [errorMessages, setErrorMessages] = useState({})
-
-  const handleChange = (event) => {
-    setUserInfo({ ...userInfo, [event.target.name]: event.target.value });
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault()
-    axios.post(`http://localhost:3000/api/v1/users`, userInfo, {  headers: { 'content-type': 'application/vnd.api+json' },  })
-      .then(res => {
-        setLoggedIn({type: 'logged_in'})
-      })
-      .catch((error) => {
-        setErrorMessages(error.response.data)
-      })
+  const onSubmit = data => {
+    signUp(data).catch((error) => {
+      setErrorMessage(error.response.data)
+    })
   }
 
   return (
     <div className={styles.main}>
       <div className={styles.main_background} />
       <div className={styles.form_section_background} />
-      <form className={styles.form_section} >
-        <input
-          className={styles.form_section_input}
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={userInfo.username}
-          onChange={handleChange}
-        />
-        <InputError key={errorMessages.id} error_message={`Username ${errorMessages.username}`} error={errorMessages.username} />
-        <input
-          className={styles.form_section_input}
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={userInfo.email}
-          onChange={handleChange}
-        />
-        <InputError key={errorMessages.id} error_message={`Email ${errorMessages.email}`} error={errorMessages.email} />
-        <input
-          className={styles.form_section_input}
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={userInfo.password}
-          onChange={handleChange}
-        />
-        <InputError key={errorMessages.id} error_message={`Password ${errorMessages.password}`} error={errorMessages.password} />
-        <input
-          className={styles.form_section_input}
-          type="password"
-          name="password_confirmation"
-          placeholder="Password Confirmation"
-          value={userInfo.password_confirmation}
-          onChange={handleChange}
-        />
-        <InputError key={errorMessages.id} error_message={`Password Confirmation ${errorMessages.password_confirmation}`} error={errorMessages.password_confirmation} />
-        <button className={styles.form_section_submit_button} onClick={handleSubmit}>Register</button>
+      <form className={styles.form_section} onSubmit={handleSubmit(onSubmit)}>
+        <input className={styles.form_section_input} placeholder='Username' {...register("username", { required: "Username is required"})} />
+        <div className={styles.input_error}> { errors.username && errors.username.message } </div>
+
+        <input className={styles.form_section_input} placeholder='Email' type="email" {...register("email", { required: "Email is required" })} />
+        <div className={styles.input_error}> { errors.email && errors.email.message } </div>
+
+        <input className={styles.form_section_input} placeholder='Password' type="password" {...register("password", { required: "Password is required", minLength: { value: 6, message: 'Password too short'} })} />
+        <div className={styles.input_error}> { errors.password && errors.password.message } </div>
+
+        <input className={styles.form_section_input} placeholder='Password Confirmation' type="password" 
+          {...register("password_confirmation", {
+            validate: { matchesPreviousPassword: (value) => {
+                const { password } = getValues();
+                return password === value || 'Password confirmation does not match password!';
+              }}
+            })
+          } />
+        <div className={styles.input_error}> { errors.password_confirmation?.type === 'matchesPreviousPassword' && errors.password_confirmation.message } </div>
+
+        { errorMessage.email && errorMessage.email.length > 0 && (
+          <div className={styles.form_error}>
+            { `Email ${errorMessage.email}` }
+          </div>
+        ) }
+        <button className={styles.form_section_submit_button}>Register</button>
       </form>
     </div>
   );
