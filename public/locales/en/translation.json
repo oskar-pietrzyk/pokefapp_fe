@@ -24,6 +24,7 @@
     }
   },
   "errors_handling": {
-    "not_found": "404 Page not found"
+    "not_found": "404 Page not found",
+    "invalid_login": "Email or password invalid. Please try again."
   }
 }

@@ -9,7 +9,6 @@ function PokemonMasterRanking() {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
-    console.log('start fetch')
     axios.get(`/api/v1/pokemon_master_ranking`)
       .then(res => {
         setPlayers(res.data.players || [])

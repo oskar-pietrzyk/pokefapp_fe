@@ -5,7 +5,7 @@ const instance = axios.create({
   headers: {
     common: {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/vnd.api+json"
     },
   },
 });
