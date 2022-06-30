@@ -3,6 +3,7 @@ export const reducer = (state, action) => {
     return {
       ...state,
       isLoggedIn: true,
+      authToken: `${action.authToken}`
     }
   } else {
     return state
@@ -10,5 +11,6 @@ export const reducer = (state, action) => {
 }
 
 export const initialState = {
-  isLoggedIn: false
+  isLoggedIn: false,
+  authToken: ''
 }
